@@ -9,7 +9,7 @@ up() {
 
 down() {
     echo "Start: Airbyte"
-    docker-compose -f ./ingestion/airbyte/docker-compose.yaml down --volumes
+    docker-compose -f ./ingestion/airbyte/docker-compose.yaml down --volumes --rmi all
     echo "End: Airbyte"
 }
 

@@ -11,7 +11,7 @@ up() {
 
 down() {
     echo "Start: Airflow"
-    docker-compose -f ./workflow/airflow/docker-compose.yaml down --volumes
+    docker-compose -f ./workflow/airflow/docker-compose.yaml down --volumes --rmi all
     echo "End: Airflow"
 }
 
