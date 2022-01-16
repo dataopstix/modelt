@@ -1,0 +1,115 @@
+# Project information
+site_name: Modelt
+site_url: https://nawinto99.github.io/modelt/
+site_author: Naveen Thurimerla
+site_description: Modelt (mow·delt) is a modern data integration solution that connects data to data for advanced analytics.
+
+# Repository
+repo_name: nawinto99/modelt
+repo_url: https://github.com/nawinto99/modelt
+edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2021 Naveen Thurimerla
+
+# Configuration
+theme:
+    name: "material"
+    logo: assets/favicon.png
+
+    # Static files
+    static_templates:
+        - 404.html
+
+    # Don't include MkDocs' JavaScript
+    include_search_page: false
+    search_index_only: true
+
+    # Default values, taken from mkdocs_theme.yml
+    language: en
+    features:
+        - content.tabs.link
+        # - navigation.instant
+        - navigation.sections
+        - navigation.tabs
+        - navigation.tracking
+        - search.highlight
+        - search.share
+        - search.suggest
+    palette:
+        - scheme: default
+          primary: indigo
+          accent: amber
+          toggle:
+              icon: material/weather-night
+              name: Switch to dark mode
+        - scheme: slate
+          primary: orange
+          accent: blue
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to light mode
+    font:
+        text: Roboto
+        code: Roboto Mono
+    favicon: assets/favicon.png
+    icon:
+        logo: logo
+
+# Plugins
+plugins:
+    - include-markdown
+    - search
+
+# Customization
+extra:
+    generator: false
+    analytics:
+        provider: google
+        property: G-SBZJQQQ1LW
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/nawinto99
+        - icon: fontawesome/brands/docker
+          link: https://hub.docker.com/r/nawinto99/egit/
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/nawinto99
+
+# Extensions
+markdown_extensions:
+    - admonition
+    - abbr
+    - attr_list
+    - def_list
+    - footnotes
+    - meta
+    - md_in_html
+    - toc:
+          permalink: true
+    - pymdownx.arithmatex:
+          generic: true
+    - pymdownx.betterem:
+          smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+    - pymdownx.keys
+    - pymdownx.magiclink:
+          repo_url_shorthand: true
+          user: squidfunk
+          repo: mkdocs-material
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.tabbed
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    - pymdownx.tilde
+    - pymdownx.emoji:
+          emoji_index: !!python/name:materialx.emoji.twemoji
+          emoji_generator: !!python/name:materialx.emoji.to_svg # Page tree
+
+nav:
+    - Home: index.md
+    

@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "modelt"
+version = "0.1.0"
+description = "Modelt(mow·delt) is a modern data integration solution that connects data to data for advanced analytics."
+authors = ["Naveen Thurimerla <nawinto99@gmail.com>"]
+license = "Apache License 2.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+mkdocs = {version = "^1.2.3", optional = true}
+mkdocs-autorefs = {version = "^0.3.1", optional = true}
+mkdocs-include-markdown-plugin = {version = "^3.2.3", optional = true}
+mkdocs-material = {version = "^8.1.6", optional = true}
+mkdocs-material-extensions = {version = "^1.0.3", optional = true}
+mkdocstrings = {version = "^0.17.0", optional = true}
+
+[tool.poetry.extras]
+doc = ["mkdocs", "mkdocs-include-markdown-plugin", "mkdocs-material", "mkdocstrings", "mkdocs-material-extensions", "mkdocs-autorefs"]
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/nawinto99/modelt/issues"
+
+[tool.poetry.scripts]
+modelt = "modelt:main"
