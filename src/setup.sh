@@ -5,9 +5,12 @@
 #Setup files
 ingestion_setup="./ingestion/setup.sh"
 workflow_setup="./workflow/setup.sh"
+transform_setup="./transform/setup.sh"
+
 
 chmod +x $ingestion_setup
 chmod +x $workflow_setup
+chmod +x $transform_setup
 
 
 up() {
@@ -18,6 +21,10 @@ up() {
     echo "Setup workflow tool"
     . $workflow_setup up
     echo "Setup data workflow tool completed"
+
+    echo "Setup transform tool"
+    . $transform_setup up
+    echo "Setup data transform tool completed"
 }
 
 down() {
@@ -28,6 +35,10 @@ down() {
     echo "Down the workflow tool"
     . $workflow_setup down
     echo "Down the workflow tool completed"
+
+    echo "Down the transform tool"
+    . $transform_setup down
+    echo "Down the transform tool completed"
 
 }
 
