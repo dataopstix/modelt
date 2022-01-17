@@ -2,11 +2,6 @@
 
 up() {
     echo "Start: dbt"
-    echo "End: dbt"
-}
-
-down() {
-    echo "Start: dbt"
     pip3 install dbt-postgres
     mkdir ~/modelt_dbt
     cd ~/modelt_dbt
@@ -15,6 +10,14 @@ down() {
     echo "dbt installed"
     echo "$PWD"
     cd $PWD
+    echo "End: dbt"
+}
+
+down() {
+    echo "Start: dbt"
+    pip3 uninstall dbt-postgres
+    pip3 uninstall dbt-core
+    rm -r ~/modelt_dbt
     echo "End: dbt"
 }
 
