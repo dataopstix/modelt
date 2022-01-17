@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
+docker_compose_file="./ingestion/airbyte/docker-compose.yaml"
 
 up() {
     echo "Start: Airbyte"
-    docker-compose -f ./ingestion/airbyte/docker-compose.yaml up --detach --no-recreate
+    docker-compose -f $docker_compose_file up --detach --no-recreate
     echo "End: Airbyte"
 }
 
 down() {
     echo "Start: Airbyte"
-    docker-compose -f ./ingestion/airbyte/docker-compose.yaml down --volumes --rmi all
+    docker-compose -f $docker_compose_file down --volumes --rmi all
     echo "End: Airbyte"
 }
 
 case $1 in up)
-    up $0
+    up
     ;;
 down)
     down

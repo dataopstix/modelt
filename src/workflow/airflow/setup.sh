@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
+docker_compose_file="./workflow/airflow/docker-compose.yaml"
 
 up() {
     echo "Start: Airflow"
     mkdir -p ./workflow/airflow/dags ./workflow/airflow/logs ./workflow/airflow/plugins
-    docker-compose -f ./workflow/airflow/docker-compose.yaml up airflow-init
-    docker-compose -f ./workflow/airflow/docker-compose.yaml up --detach --no-recreate
+    docker-compose -f $docker_compose_file up airflow-init
+    docker-compose -f $docker_compose_file up --detach --no-recreate
     echo "End: Airflow"
 }
 
 down() {
     echo "Start: Airflow"
-    docker-compose -f ./workflow/airflow/docker-compose.yaml down --volumes --rmi all
+    docker-compose -f $docker_compose_file down --volumes --rmi all
     echo "End: Airflow"
 }
 

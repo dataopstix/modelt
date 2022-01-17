@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
+workflow_setup_tool="./workflow/$WORKFLOW/setup.sh"
 
 up() {
     echo "Setup the tool $WORKFLOW"
-    . ./workflow/$WORKFLOW/setup.sh up
+    . $workflow_setup_tool up
     echo "Setup the tool $WORKFLOW completed"
 }
 
 down() {
     echo "Down the tool $WORKFLOW"
-    . ./workflow/$WORKFLOW/setup.sh down
+    . $workflow_setup_tool down
     echo "Down the tool $WORKFLOW completed"
 }
 
 case $1 in up)
-    up $0
+    up
     ;;
 down)
     down

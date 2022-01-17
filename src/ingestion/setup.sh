@@ -1,20 +1,24 @@
 #!/usr/bin/env bash
 
+#Setup files
+ingestion_setup_tool="./ingestion/$INGESTION/setup.sh"
+
+chmod +x $ingestion_setup_tool
 
 up() {
     echo "Setup the tool $INGESTION"
-    . ./ingestion/$INGESTION/setup.sh up
+    . $ingestion_setup_tool up
     echo "Setup the tool $INGESTION completed"
 }
 
 down() {
     echo "Down the tool $INGESTION"
-    . ./ingestion/$INGESTION/setup.sh down
+    . $ingestion_setup_tool down
     echo "Down the tool $INGESTION completed"
 }
 
 case $1 in up)
-    up $0
+    up
     ;;
 down)
     down
