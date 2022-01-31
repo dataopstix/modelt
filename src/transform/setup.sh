@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-docker_compose_file="./ingestion/airbyte/docker-compose.yaml"
+#Setup files
+transform_setup_tool="./transform/$TRANSFORM/setup.sh"
+
+chmod +x $transform_setup_tool
 
 up() {
-    echo "Start: Airbyte"
-    docker-compose -f $docker_compose_file up --detach --no-recreate
-    echo "End: Airbyte"
+    echo "Setup the tool $TRANSFORM"
+    . $transform_setup_tool up
+    echo "Setup the tool $TRANSFORM completed"
 }
 
 down() {
-    echo "Start: Airbyte"
-    docker-compose -f $docker_compose_file down --volumes --rmi all
-    echo "End: Airbyte"
+    echo "Down the tool $TRANSFORM"
+    . $transform_setup_tool down
+    echo "Down the tool $TRANSFORM completed"
 }
 
 case $1 in up)
